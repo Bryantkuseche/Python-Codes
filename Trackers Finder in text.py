@@ -30,6 +30,9 @@ for link in http:
 for link in udp:
 	print link
 
+for link in magnet:
+	print magnet
+
 print "Statistics:\n"
 print "There is" , num_link_http , "Http's links"
 print "There is" , num_link_udp ,  "Udp's links" 
