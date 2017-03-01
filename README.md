@@ -1,4 +1,4 @@
-# Python-Codes
+# Español
 Mis codigos creados en Python como parte de mi curso de Coursera
 
 LEEME
@@ -19,7 +19,7 @@ Readme
 
 This file contains the information of how use this repository, to let in clear to have.
 
-Any perso can use, the use depends by YOU and don't made responsabitlies for damages in the future, in few words: Used under caution. 
+Any person can use, the use depends by YOU and don't made responsabitlies for damages in the future, in few words: Used under caution. 
 
 This is not commercial, but if you go use, just want to put my name in the credits like one to contributors.
 
