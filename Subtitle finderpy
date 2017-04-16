@@ -1,0 +1,86 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+#  Subtitle finderpy
+#  
+#  Copyright 2017 Bryan Useche <bryan.useche.coding@gmail.com>
+#  
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#  
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#  
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+#  MA 02110-1301, USA.
+#  
+#  
+
+
+import re
+from bs4 import BeautifulSoup
+import urllib
+import os
+import sqlite3
+
+
+busqueda = raw_input("Enter the TV Show or movie to find subtitle: ")
+
+url = 'https://www.tusubtitulo.com/series.php'
+url2 = 'https://www.tusubtitulo.com'
+
+conn = sqlite3.connect('Tusubtitulo DB.sqlite3')
+cur = conn.cursor()
+
+#We now define the tables in the DB
+cur.execute('''
+
+DROP TABLE IF EXISTS Subtitles
+
+''')
+
+cur.execute('''
+
+CREATE TABLE `Subtitles` (
+	`TV Show Name`	TEXT NOT NULL UNIQUE,
+	`Season`	NUMERIC NOT NULL UNIQUE,
+	`Episodie`	NUMERIC NOT NULL,
+	`Name of Episodie`	TEXT NOT NULL UNIQUE,
+	`Version`	TEXT NOT NULL,
+	`Download`	TEXT NOT NULL UNIQUE,
+	PRIMARY KEY(`TV Show Name`,`Season`)
+);
+
+''')
+
+html = urllib.urlopen(url)
+soup = BeautifulSoup(html , 'html.parser')
+for i in soup.find_all('a'):
+	#Obtencion de los nombres de las series y sus enlaces
+	TV_Show_name = i.get_text()
+	link1 = i.get('href')
+	#Obtencion del enlace
+	if link1.startswith('/show/'):
+		html2 = urllib.urlopen((url2+link1))
+		soup2 = BeautifulSoup(html2 , 'html.parser')
+		for j in soup:
+			print j #Aqui me quedè 15/04/2017 22:41:41 
+			
+''' 
+Para hacer:
+
+1. Parseo a la pagina de la serie resultante (las temporadas son enlace del tipo '#')
+2. Obtener el nombre del episodio, la version y el enlace de descarga
+3. Llamar con el WGET para descargar el subtitulo
+4. Integrarlo con el modulo OS para que se haga con los archivos del directorio de descarga.
+
+'''
+		
+	
+	
