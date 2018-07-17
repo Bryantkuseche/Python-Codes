@@ -18,7 +18,7 @@ for link in data:
 	elif re.search('udp://.*' , link):
 		udp.append(link)
 		num_link_udp = num_link_udp + 1
-for link in http:
+for link in http: #Issue: No ping in any server with this sentence
 	hostname = link
 	response = os.system("ping -c 1 " + hostname)
 	#and then check the response...
