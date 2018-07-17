@@ -10,7 +10,7 @@ Uselo(s) con responsabilidad.
 
 Su fin no es comercial, pero si lo(s) va a usar con ese fin, solo pido que me coloque en sus creditos como uno de sus colaboradores.
 
-Para mas informacion, puede enviar un email a bryan.useche.10@gmail.com
+Para mas informacion, puede enviar un email a bryan.useche.coding@gmail.com
 
 Saludos
 
@@ -27,7 +27,7 @@ Any person can use, the use depends by YOU and I DON'T made responsabitlies for 
 
 This is not commercial, but if you go use, just want to put my name in the credits like one to contributors.
 
-For more info, you can send a email to bryan.useche.10@gmail.com.
+For more info, you can send a email to bryan.useche.coding@gmail.com.
 
 Best Regards
 
